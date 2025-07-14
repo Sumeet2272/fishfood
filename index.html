@@ -83,6 +83,30 @@
     #clientCarousel .carousel-inner {
       padding: 0 40px;
     }
+
+    /* Overlay shown on hover */
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.card:hover .product-overlay {
+  opacity: 1;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
   </style>
 </head>
 <body>
@@ -106,27 +130,66 @@
   </nav>
 
   <!-- Home Section -->
-  <section id="home">
-    <div class="bg-overlay container">
-      <h1>Welcome to Malganga Sea Foods</h1>
-      <p>
-        We are a leading exporter of premium quality raw fish food products. With over a decade of experience, we serve clients globally with consistent quality and timely deliveries.
-      </p>
+<section id="home">
+  <div class="bg-overlay container text-center">
+    <h1 class="display-4 fw-bold text-uppercase">Malganga Sea Foods</h1>
+    <h2 class="h4 mt-3 mb-4">Fresh From The Ocean To Your Plate</h2>
 
-      <!-- Responsive Client Carousel -->
-      <div id="clientCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="mt-4">
+      <a href="#products" class="btn btn-warning btn-lg me-3">Explore Products</a>
+      <a href="#contact" class="btn btn-outline-light btn-lg">Get in Touch</a>
+    </div>
+  </div>
+
+  <!-- Key Highlights Section -->
+  <div class="bg-light text-dark py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-4">
+          <i class="bi bi-globe-americas fs-2 text-primary"></i>
+          <h5 class="mt-2">Nationwide Reach</h5>
+          <p class="small">Serving across India</p>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <i class="bi bi-shield-check fs-2 text-success"></i>
+          <h5 class="mt-2">Trusted Quality</h5>
+          <p class="small">100% Fresh & Certified</p>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <i class="bi bi-truck fs-2 text-warning"></i>
+          <h5 class="mt-2">Fast Delivery</h5>
+          <p class="small">Reliable cold-chain</p>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <i class="bi bi-people-fill fs-2 text-danger"></i>
+          <h5 class="mt-2">500+ Clients</h5>
+          <p class="small">Hotels, Restaurants, Chains</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client Carousel Section -->
+  <div class="bg-dark text-light py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">Our Clients</h3>
+
+      <div id="clientCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
         <div class="carousel-inner" id="clientCarouselInner">
           <!-- Populated by JS -->
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#clientCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#clientCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Products Section -->
   <section id="products">
@@ -308,35 +371,66 @@
     }
 
     function loadProducts() {
-      const productGrid = document.getElementById('productGrid');
-      productGrid.innerHTML = '';
+  const productGrid = document.getElementById('productGrid');
+  productGrid.innerHTML = '';
 
-      products.forEach(product => {
-        const col = document.createElement('div');
-        col.className = 'col-6 col-md-4 col-lg-3 mb-4';
+  products.forEach(product => {
+    const col = document.createElement('div');
+    col.className = 'col-6 col-md-4 col-lg-3 mb-4';
 
-        const card = document.createElement('div');
-        card.className = 'card bg-dark text-white h-100';
+    const card = document.createElement('div');
+    card.className = 'card bg-dark text-white h-100 position-relative overflow-hidden';
 
-        const img = document.createElement('img');
-        img.src = product.image || 'https://via.placeholder.com/300x200?text=Product';
-        img.className = 'card-img-top';
-        img.alt = product.name;
+    const img = document.createElement('img');
+    img.src = product.image || 'https://via.placeholder.com/300x200?text=Product';
+    img.className = 'card-img-top';
+    img.alt = product.name;
 
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body text-center';
+    const overlay = document.createElement('div');
+    overlay.className = 'product-overlay d-flex justify-content-center align-items-center';
 
-        const cardTitle = document.createElement('h5');
-        cardTitle.className = 'card-title';
-        cardTitle.textContent = product.name;
+    const overlayTitle = document.createElement('h5');
+    overlayTitle.className = 'text-white text-center m-0';
+    overlayTitle.textContent = product.name;
 
-        cardBody.appendChild(cardTitle);
-        card.appendChild(img);
-        card.appendChild(cardBody);
-        col.appendChild(card);
-        productGrid.appendChild(col);
-      });
-    }
+    overlay.appendChild(overlayTitle);
+    card.appendChild(img);
+    card.appendChild(overlay);
+    col.appendChild(card);
+    productGrid.appendChild(col);
+  });
+}
+
+    // function loadProducts() {
+    //   const productGrid = document.getElementById('productGrid');
+    //   productGrid.innerHTML = '';
+
+    //   products.forEach(product => {
+    //     const col = document.createElement('div');
+    //     col.className = 'col-6 col-md-4 col-lg-3 mb-4';
+
+    //     const card = document.createElement('div');
+    //     card.className = 'card bg-dark text-white h-100';
+
+    //     const img = document.createElement('img');
+    //     img.src = product.image || 'https://via.placeholder.com/300x200?text=Product';
+    //     img.className = 'card-img-top';
+    //     img.alt = product.name;
+
+    //     const cardBody = document.createElement('div');
+    //     cardBody.className = 'card-body text-center';
+
+    //     const cardTitle = document.createElement('h5');
+    //     cardTitle.className = 'card-title';
+    //     cardTitle.textContent = product.name;
+
+    //     cardBody.appendChild(cardTitle);
+    //     card.appendChild(img);
+    //     card.appendChild(cardBody);
+    //     col.appendChild(card);
+    //     productGrid.appendChild(col);
+    //   });
+    // }
 
     document.addEventListener('DOMContentLoaded', () => {
       loadClients();
