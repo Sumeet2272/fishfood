@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ocean Fresh Exports</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { padding-top: 56px; margin: 0; }
+
+    section {
+      min-height: 500px;
+      padding: 60px 20px;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #home {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+    }
+
+    #products {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80');
+    }
+
+    #about {
+      background-image: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1470&q=80');
+    }
+
+    #contact {
+      background-image: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1470&q=80');
+    }
+
+    .bg-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px 20px;
+      border-radius: 8px;
+    }
+
+    a { color: #ffc107; text-decoration: underline; }
+    a:hover { color: #fff; }
+
+    .client-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .client-tile {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card-img-top {
+      height: 160px;
+      object-fit: cover;
+    }
+
+    /* Fix carousel overlap */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+      z-index: 2;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    #clientCarousel .carousel-inner {
+      padding: 0 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#home">Ocean Fresh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="bg-overlay container">
+      <h1>Welcome to Ocean Fresh Exports</h1>
+      <p>
+        We are a leading exporter of premium quality raw fish food products. With over a decade of experience, we serve clients globally with consistent quality and timely deliveries.
+      </p>
+
+      <!-- Responsive Client Carousel -->
+      <div id="clientCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner" id="clientCarouselInner">
+          <!-- Populated by JS -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#clientCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#clientCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <div class="bg-overlay container">
+      <h2>Our Products</h2>
+      <div id="productGrid" class="row mt-4">
+        <!-- Product cards loaded by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about">
+    <div class="bg-overlay container">
+      <h2>About Us</h2>
+
+      <div class="mb-4">
+        <h4>Malganga Sea Foods</h4>
+        <p>
+          Malganga Sea Foods is a family-owned business with over 40 years of experience in the seafood industry. Starting at Sassoon Dock in Colaba, Mumbai, they aimed to provide the freshest seafood to Mumbai residents. Now in their second generation, they serve clients across India, offering top-quality seafood products. Their growth from a single dock to a nationwide network highlights their commitment to quality and customer satisfaction. They have expanded beyond Mumbai, establishing a strong presence in Pune and reaching clients nationwide. Today, they supply a wide range of fresh and frozen seafood to restaurants, hotels, caterers, and retail chains across India.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <h5>Nationwide Reach</h5>
+        <p>
+          Nationwide Reach with Local Roots at Malganga Sea Foods highlights their extensive distribution network that spans across India, while maintaining their origins in Mumbai. Their seamless supply chain ensures swift and optimal delivery of seafood to top hotels, restaurants, and retail chains nationwide. Proud of their journey, they continue to offer the finest seafood, catering to restaurants, caterers, and seafood enthusiasts across the country.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <h5>Trust and Excellence</h5>
+        <p>
+          A Legacy of Trust and Excellence at Malganga Sea Foods is built on enduring values and a strong family legacy. Now in the hands of the second generation, they continue to uphold the founders’ principles of transparency, trust, and quality in every transaction, reinforcing their reputation as a reliable seafood supplier.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <h5>Commitment</h5>
+        <p>
+          Our Commitment to Quality at Malganga Sea Foods emphasizes sourcing the freshest catch and maintaining strict quality controls. They offer a wide range of seafood, including fish, prawns, lobsters, crabs, and exotic varieties, in both fresh and frozen formats. Their efficient sourcing and distribution network ensure prompt delivery of premium seafood across India.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Contact Section -->
+  <section id="contact">
+    <div class="bg-overlay container">
+      <h2>Contact Us</h2>
+      <p>
+        Based in Kochi, India, Ocean Fresh Exports has been a trusted name in seafood export since 2010. Our cold storage and logistics partners enable efficient export to over 20 countries.
+      </p>
+      <h4>Contact Information</h4>
+      <ul class="list-unstyled">
+        <li><i class="bi bi-envelope"></i> Email: <a href="mailto:contact@oceanfresh.com">contact@oceanfresh.com</a></li>
+        <li><i class="bi bi-telephone"></i> Phone: +91-9876543210</li>
+        <li><i class="bi bi-geo-alt"></i> Address: 123 Marine Drive, Kochi, Kerala, India</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Embedded JSON Data -->
+  <script id="clients-data" type="application/json">
+  [
+    { "name": "Tokyo Seafood Ltd.", "logo": "https://via.placeholder.com/100?text=Tokyo" },
+    { "name": "Oslo Marine Co.", "logo": "https://via.placeholder.com/100?text=Oslo" },
+    { "name": "Toronto Fresh Imports", "logo": "https://via.placeholder.com/100?text=Toronto" },
+    { "name": "Dubai Fish Traders", "logo": "https://via.placeholder.com/100?text=Dubai" },
+    { "name": "Sydney Seafoods", "logo": "https://via.placeholder.com/100?text=Sydney" },
+    { "name": "Cape Cod Fisheries", "logo": "https://via.placeholder.com/100?text=Cape+Cod" }
+  ]
+  </script>
+
+  <script id="products-data" type="application/json">
+  [
+    { "name": "Yellowfin Tuna", "image": "https://via.placeholder.com/300x200?text=Yellowfin+Tuna" },
+    { "name": "Indian Mackerel", "image": "https://via.placeholder.com/300x200?text=Indian+Mackerel" },
+    { "name": "Red Snapper", "image": "https://via.placeholder.com/300x200?text=Red+Snapper" },
+    { "name": "Frozen Sardines (IQF)", "image": "https://via.placeholder.com/300x200?text=Sardines" },
+    { "name": "Frozen Salmon Fillets", "image": "https://via.placeholder.com/300x200?text=Salmon+Fillets" },
+    { "name": "Skinless Tuna Chunks", "image": "https://via.placeholder.com/300x200?text=Tuna+Chunks" },
+    { "name": "Boneless Barramundi Cuts", "image": "https://via.placeholder.com/300x200?text=Barramundi+Cuts" },
+    { "name": "Fish Meal", "image": "https://via.placeholder.com/300x200?text=Fish+Meal" },
+    { "name": "Fish Oil", "image": "https://via.placeholder.com/300x200?text=Fish+Oil" }
+  ]
+  </script>
+
+  <script>
+    const clients = JSON.parse(document.getElementById('clients-data').textContent);
+    const products = JSON.parse(document.getElementById('products-data').textContent);
+
+    function getTileCountPerSlide() {
+      const width = window.innerWidth;
+      if (width >= 992) return 3;
+      if (width >= 768) return 2;
+      return 1;
+    }
+
+    function loadClients() {
+      const carouselInner = document.getElementById('clientCarouselInner');
+      carouselInner.innerHTML = '';
+
+      const tilesPerSlide = getTileCountPerSlide();
+
+      for (let i = 0; i < clients.length; i += tilesPerSlide) {
+        const group = clients.slice(i, i + tilesPerSlide);
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'carousel-item' + (i === 0 ? ' active' : '');
+
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'row';
+
+        group.forEach(client => {
+          const col = document.createElement('div');
+          col.className = 'col-12 col-md-6 col-lg-4 client-tile';
+
+          col.innerHTML = `
+            <img src="${client.logo}" alt="${client.name}" class="client-logo rounded-circle bg-white" />
+            <h5 class="mt-2 text-warning">${client.name}</h5>
+          `;
+
+          rowDiv.appendChild(col);
+        });
+
+        itemDiv.appendChild(rowDiv);
+        carouselInner.appendChild(itemDiv);
+      }
+    }
+
+    function loadProducts() {
+      const productGrid = document.getElementById('productGrid');
+      productGrid.innerHTML = '';
+
+      products.forEach(product => {
+        const col = document.createElement('div');
+        col.className = 'col-6 col-md-4 col-lg-3 mb-4';
+
+        const card = document.createElement('div');
+        card.className = 'card bg-dark text-white h-100';
+
+        const img = document.createElement('img');
+        img.src = product.image || 'https://via.placeholder.com/300x200?text=Product';
+        img.className = 'card-img-top';
+        img.alt = product.name;
+
+        const cardBody = document.createElement('div');
+        cardBody.className = 'card-body text-center';
+
+        const cardTitle = document.createElement('h5');
+        cardTitle.className = 'card-title';
+        cardTitle.textContent = product.name;
+
+        cardBody.appendChild(cardTitle);
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        productGrid.appendChild(col);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadClients();
+      loadProducts();
+    });
+
+    window.addEventListener('resize', () => {
+      loadClients(); // reload carousel layout
+    });
+  </script>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
